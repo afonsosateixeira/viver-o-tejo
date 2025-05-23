@@ -24,7 +24,27 @@
 
       <!-- Grid de Atividades -->
       <div id="atividades-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cards gerados via JS -->
+
+        <!-- Card 1 -->
+        <a href="o-que-fazer/details/1.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Observação de Aves" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold mb-2">Observação de Aves</h2>
+            <p class="text-gray-600 mb-4">Descubra a rica avifauna do vale do Tejo</p>
+            <span class="text-blue-600 font-medium">Ver mais</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="o-que-fazer/details/2.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80" alt="Passeios de Barco" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold mb-2">Passeios de Barco</h2>
+            <p class="text-gray-600 mb-4">Navegue pelas águas tranquilas do Tejo</p>
+            <span class="text-blue-600 font-medium">Ver mais</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </div>
@@ -35,52 +55,6 @@
       <p>&copy; 2025 Viver o Tejo. Todos os direitos reservados.</p>
     </div>
   </footer>
-
-  <script>
-    const atividades = [
-      {
-        id: 1,
-        title: 'Observação de Aves',
-        description: 'Descubra a rica avifauna do vale do Tejo',
-        images: [
-          'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80'
-        ],
-        location: 'Paul do Boquilobo',
-      },
-      {
-        id: 2,
-        title: 'Passeios de Barco',
-        description: 'Navegue pelas águas tranquilas do Tejo',
-        images: [
-          'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800&q=80'
-        ],
-        location: 'Constância',
-      },
-    ];
-
-    const container = document.getElementById('atividades-grid');
-
-    atividades.forEach(atividade => {
-      const card = document.createElement('a');
-      card.href = `o-que-fazer/details/${atividade.id}.html`;
-      card.className = 'block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
-
-      card.innerHTML = `
-        <img src="${atividade.images[0]}" alt="${atividade.title}" class="w-full h-48 object-cover" loading="lazy" />
-        <div class="p-4">
-          <h2 class="text-xl font-bold mb-2">${atividade.title}</h2>
-          <p class="text-gray-600 mb-4">${atividade.description}</p>
-          <span class="text-blue-600 font-medium">Ver mais</span>
-        </div>
-      `;
-
-      container.appendChild(card);
-    });
-  </script>
 
 </body>
 </html>

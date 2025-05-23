@@ -24,7 +24,27 @@
 
       <!-- Grid dos restaurantes -->
       <div id="restaurantes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cards serão inseridos via JS -->
+
+        <!-- Card 1 -->
+        <a href="onde-comer/details/1.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80" alt="Restaurante Beira Rio" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold mb-2">Restaurante Beira Rio</h2>
+            <p class="text-gray-600 mb-4">Cozinha tradicional com vista privilegiada para o Tejo</p>
+            <span class="text-blue-600 font-medium">Ver mais</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="onde-comer/details/2.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800&q=80" alt="Tasca da Aldeia" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold mb-2">Tasca da Aldeia</h2>
+            <p class="text-gray-600 mb-4">Sabores autênticos numa tasca familiar tradicional</p>
+            <span class="text-blue-600 font-medium">Ver mais</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </div>
@@ -36,50 +56,5 @@
     </div>
   </footer>
 
-  <script>
-    const restaurantes = [
-      {
-        id: 1,
-        title: 'Restaurante Beira Rio',
-        description: 'Cozinha tradicional com vista privilegiada para o Tejo',
-        images: [
-          'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800&q=80'
-        ],
-        location: 'Santarém',
-      },
-      {
-        id: 2,
-        title: 'Tasca da Aldeia',
-        description: 'Sabores autênticos numa tasca familiar tradicional',
-        images: [
-          'https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80'
-        ],
-        location: 'Constância',
-      },
-    ];
-
-    const container = document.getElementById('restaurantes-grid');
-
-    restaurantes.forEach(restaurante => {
-      const card = document.createElement('a');
-      card.href = `onde-comer/details/${restaurante.id}.html`;
-      card.className = 'block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
-
-      card.innerHTML = `
-        <img src="${restaurante.images[0]}" alt="${restaurante.title}" class="w-full h-48 object-cover" loading="lazy" />
-        <div class="p-4">
-          <h2 class="text-xl font-bold mb-2">${restaurante.title}</h2>
-          <p class="text-gray-600 mb-4">${restaurante.description}</p>
-          <span class="text-blue-600 font-medium">Ver mais</span>
-        </div>
-      `;
-
-      container.appendChild(card);
-    });
-  </script>
 </body>
 </html>

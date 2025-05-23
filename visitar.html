@@ -23,8 +23,28 @@
       </div>
 
       <!-- Grid de Atrações -->
-      <div id="atracoes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cards gerados pelo JS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <a href="o-que-visitar/details/1.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80" alt="Centro Interpretativo do Tejo" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold mb-2">Centro Interpretativo do Tejo</h2>
+            <p class="text-gray-600 mb-4">Conheça a história e biodiversidade da região</p>
+            <span class="text-blue-600 font-medium">Ver mais</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="o-que-visitar/details/2.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="Miradouros do Tejo" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold mb-2">Miradouros do Tejo</h2>
+            <p class="text-gray-600 mb-4">Pontos panorâmicos com vistas deslumbrantes</p>
+            <span class="text-blue-600 font-medium">Ver mais</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </div>
@@ -35,52 +55,6 @@
       <p>&copy; 2025 Viver o Tejo. Todos os direitos reservados.</p>
     </div>
   </footer>
-
-  <script>
-    const atracoes = [
-      {
-        id: 1,
-        title: 'Centro Interpretativo do Tejo',
-        description: 'Conheça a história e biodiversidade da região',
-        images: [
-          'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80'
-        ],
-        location: 'Santarém',
-      },
-      {
-        id: 2,
-        title: 'Miradouros do Tejo',
-        description: 'Pontos panorâmicos com vistas deslumbrantes',
-        images: [
-          'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80'
-        ],
-        location: 'Vários pontos da região',
-      },
-    ];
-
-    const container = document.getElementById('atracoes-grid');
-
-    atracoes.forEach(atracao => {
-      const card = document.createElement('a');
-      card.href = `o-que-visitar/details/${atracao.id}.html`;
-      card.className = 'block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
-
-      card.innerHTML = `
-        <img src="${atracao.images[0]}" alt="${atracao.title}" class="w-full h-48 object-cover" loading="lazy" />
-        <div class="p-4">
-          <h2 class="text-xl font-bold mb-2">${atracao.title}</h2>
-          <p class="text-gray-600 mb-4">${atracao.description}</p>
-          <span class="text-blue-600 font-medium">Ver mais</span>
-        </div>
-      `;
-
-      container.appendChild(card);
-    });
-  </script>
 
 </body>
 </html>
