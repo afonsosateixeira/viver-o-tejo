@@ -1,48 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contactos - Viver o Tejo</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contactos – Viver o Tejo</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Menu -->
-  <header>
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">Viver o Tejo</a>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projeto.html">O Projeto</a></li>
-          <li><a href="contactos.html" class="active">Contactos</a></li>
-          <li><a href="roteiros.html">Roteiros</a></li>
-          <li><a href="dormir.html">Onde Dormir</a></li>
-          <li><a href="comer.html">Onde Comer</a></li>
-          <li><a href="fazer.html">O que Fazer</a></li>
-          <li><a href="visitar.html">O que Visitar</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <!-- Navbar -->
+  <script src="navbar.js"></script>
+  <div id="navbar-container"></div>
 
-  <!-- Conteúdo -->
-  <section class="conteudo-pagina">
-    <div class="container">
-      <h1>Contactos</h1>
-      <p><strong>Email:</strong> geral@viverotejo.pt</p>
-      <p><strong>Telefone:</strong> +351 123 456 789</p>
+  <!-- Conteúdo Principal -->
+  <div class="min-h-screen pt-24 pb-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-12">Contactos</h1>
 
-      <h3>Localização</h3>
-      <div style="max-width:100%;height:400px;">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31278.134091226776!2d-8.6875!3d39.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18bdc927b68e0f%3A0x1234567890abcdef!2sRio%20Tejo!5e0!3m2!1spt-PT!2spt!4v1600000000000!5m2!1spt-PT!2spt" 
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Informações de Contacto + Formulário -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Entre em Contacto</h2>
+
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <span class="text-blue-600 mt-1">📍</span>
+              <div>
+                <h3 class="font-semibold">Morada</h3>
+                <p class="text-gray-600">
+                  Centro de Interpretação do Tejo<br />
+                  Rua da Ribeira, 123<br />
+                  2000-000 Santarém
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <span class="text-blue-600 mt-1">📞</span>
+              <div>
+                <h3 class="font-semibold">Telefone</h3>
+                <p class="text-gray-600">+351 243 XXX XXX</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <span class="text-blue-600 mt-1">✉️</span>
+              <div>
+                <h3 class="font-semibold">Email</h3>
+                <p class="text-gray-600">info@viverotejo.pt</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <span class="text-blue-600 mt-1">🕒</span>
+              <div>
+                <h3 class="font-semibold">Horário</h3>
+                <p class="text-gray-600">
+                  Segunda a Sexta: 9:00 - 18:00<br />
+                  Sábados: 9:00 - 13:00<br />
+                  Domingos: Fechado
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário -->
+          <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-4">Envie-nos uma Mensagem</h3>
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium mb-1">Nome</label>
+                  <input type="text" placeholder="O seu nome" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"/>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-1">Email</label>
+                  <input type="email" placeholder="seu@email.com" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"/>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Assunto</label>
+                <input type="text" placeholder="Assunto da mensagem" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"/>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Mensagem</label>
+                <textarea rows="4" placeholder="A sua mensagem..." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+              </div>
+              <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Mapa -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Localização</h2>
+          <div class="bg-white rounded-lg shadow-md p-4 h-96">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99008.62727924!2d-8.686700000000001!3d39.2362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18fdfce6bc7d15%3A0x5b9e2b7b7b9b7b9b!2sSantar%C3%A9m!5e0!3m2!1spt!2spt!4v1234567890"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-lg"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-16">
+    <div class="container mx-auto px-4 py-8 text-center">
+      <p>&copy; 2025 Viver o Tejo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

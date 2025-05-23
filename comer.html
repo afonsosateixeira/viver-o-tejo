@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Onde Comer - Viver o Tejo</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Onde Comer – Viver o Tejo</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Menu -->
-  <header>
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">Viver o Tejo</a>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projeto.html">O Projeto</a></li>
-          <li><a href="contactos.html">Contactos</a></li>
-          <li><a href="roteiros.html">Roteiros</a></li>
-          <li><a href="dormir.html">Onde Dormir</a></li>
-          <li><a href="comer.html" class="active">Onde Comer</a></li>
-          <li><a href="fazer.html">O que Fazer</a></li>
-          <li><a href="visitar.html">O que Visitar</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Slider -->
-  <section id="hero-slider">
-    <div class="slider">
-      <div class="slide active">
-        <img src="images/comer1.jpg" alt="Restaurante Tejo">
-        <div class="caption">
-          <h2>Sabor à Beira-Rio</h2>
-          <p>Experiências gastronómicas com produtos locais.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Navbar (se tiver, pode carregar seu navbar.js aqui) -->
+  <script src="navbar.js"></script>
+  <div id="navbar-container"></div>
 
   <!-- Conteúdo -->
-  <section class="conteudo-pagina">
-    <div class="container">
-      <h1>Onde Comer</h1>
-
-      <div class="restaurante-item">
-        <h3>Restaurante Sabores do Tejo</h3>
-        <p>Pratos típicos com ingredientes frescos da região.</p>
-        <form>
-          <label for="nome">Nome:</label><br>
-          <input type="text" id="nome" name="nome"><br>
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email"><br><br>
-          <input type="submit" value="Reservar">
-        </form>
+  <div class="min-h-screen pt-24 pb-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold mb-4">Onde Comer</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Descubra os sabores autênticos da região do Tejo. Restaurantes e tascas que preservam a tradição culinária local.
+        </p>
       </div>
 
+      <!-- Grid dos restaurantes -->
+      <div id="restaurantes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cards serão inseridos via JS -->
+      </div>
     </div>
-  </section>
+  </div>
 
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-16">
+    <div class="container mx-auto px-4 py-8 text-center">
+      <p>&copy; 2025 Viver o Tejo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const restaurantes = [
+      {
+        id: 1,
+        title: 'Restaurante Beira Rio',
+        description: 'Cozinha tradicional com vista privilegiada para o Tejo',
+        images: [
+          'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800&q=80'
+        ],
+        location: 'Santarém',
+      },
+      {
+        id: 2,
+        title: 'Tasca da Aldeia',
+        description: 'Sabores autênticos numa tasca familiar tradicional',
+        images: [
+          'https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80'
+        ],
+        location: 'Constância',
+      },
+    ];
+
+    const container = document.getElementById('restaurantes-grid');
+
+    restaurantes.forEach(restaurante => {
+      const card = document.createElement('a');
+      card.href = `onde-comer/details/${restaurante.id}.html`;
+      card.className = 'block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
+
+      card.innerHTML = `
+        <img src="${restaurante.images[0]}" alt="${restaurante.title}" class="w-full h-48 object-cover" loading="lazy" />
+        <div class="p-4">
+          <h2 class="text-xl font-bold mb-2">${restaurante.title}</h2>
+          <p class="text-gray-600 mb-4">${restaurante.description}</p>
+          <span class="text-blue-600 font-medium">Ver mais</span>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
 </body>
 </html>

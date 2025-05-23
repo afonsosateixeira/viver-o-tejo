@@ -1,75 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Viver o Tejo</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/polo-theme.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .carousel {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .carousel-slide.active {
+      left: 0;
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .carousel-slide.prev {
+      left: -100%;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Menu de navegação -->
-  <header>
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">Viver o Tejo</a>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projeto.html">O Projeto</a></li>
-          <li><a href="contactos.html">Contactos</a></li>
-          <li><a href="roteiros.html">Roteiros</a></li>
-          <li><a href="dormir.html">Onde Dormir</a></li>
-          <li><a href="comer.html">Onde Comer</a></li>
-          <li><a href="fazer.html">O que Fazer</a></li>
-          <li><a href="visitar.html">O que Visitar</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <!-- Navbar -->
+<script src="navbar.js"></script>
+<div id="navbar-container"></div>
 
-  <!-- Slider -->
-  <section id="hero-slider">
-    <div class="slider">
-      <div class="slide active">
-        <img src="images/slide1.jpg" alt="Paisagem Tejo">
-        <div class="caption">
-          <h2>Descubra o Tejo</h2>
-          <p>Explore paisagens deslumbrantes e experiências únicas.</p>
-          <a href="roteiros.html" class="btn">Ver Roteiros</a>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/slide2.jpg" alt="Cultura">
-        <div class="caption">
-          <h2>Cultura e Tradição</h2>
-          <p>Conheça a história e costumes das margens do Tejo.</p>
-          <a href="visitar.html" class="btn">Saiba Mais</a>
-        </div>
-      </div>
-      <!-- Adicione mais slides conforme necessário -->
-    </div>
-  </section>
-
-  <!-- Destaques (Banner) -->
-  <section id="destaques">
-    <!-- Mostrar apenas se houver destaques ativos -->
-    <div class="container">
-      <h3>Destaques</h3>
-      <div class="destaque-grid">
-        <!-- Destaque exemplo -->
-        <div class="destaque">
-          <img src="images/destaque-roteiro.jpg" alt="Roteiro Aleatório">
-          <h4>Roteiro Especial</h4>
-          <p>Conheça um dos roteiros mais procurados da região.</p>
-          <a href="roteiros.html" class="btn-pequeno">Explorar</a>
-        </div>
-        <!-- Repetir estrutura para outras áreas -->
+  <!-- Hero Carousel -->
+  <div class="carousel mt-16" id="hero-carousel">
+    <div class="carousel-slide active bg-cover bg-center text-white flex items-center justify-center"
+         style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')">
+      <div class="text-center bg-black bg-opacity-60 p-6 rounded">
+        <h1 class="text-4xl font-bold mb-2">Descubra o Tejo</h1>
+        <p class="mb-4">Explore paisagens deslumbrantes e experiências únicas ao longo do maior rio de Portugal</p>
+        <a href="/roteiros" class="bg-white text-gray-800 px-4 py-2 rounded">Explorar Roteiros</a>
       </div>
     </div>
-  </section>
+    <div class="carousel-slide bg-cover bg-center text-white flex items-center justify-center"
+         style="background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff')">
+      <div class="text-center bg-black bg-opacity-60 p-6 rounded">
+        <h1 class="text-4xl font-bold mb-2">Natureza Preservada</h1>
+        <p class="mb-4">Conecte-se com a natureza em cenários únicos do vale do Tejo</p>
+        <a href="/o-que-visitar" class="bg-white text-gray-800 px-4 py-2 rounded">O que Visitar</a>
+      </div>
+    </div>
+    <div class="carousel-slide bg-cover bg-center text-white flex items-center justify-center"
+         style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05')">
+      <div class="text-center bg-black bg-opacity-60 p-6 rounded">
+        <h1 class="text-4xl font-bold mb-2">Experiências Autênticas</h1>
+        <p class="mb-4">Viva momentos inesquecíveis na região mais autêntica de Portugal</p>
+        <a href="/o-que-fazer" class="bg-white text-gray-800 px-4 py-2 rounded">O que Fazer</a>
+      </div>
+    </div>
+  </div>
 
-  <script src="js/slider.js"></script>
+  <!-- Destaque -->
+  <div class="relative h-64 bg-cover bg-center my-10 rounded-xl mx-4"
+       style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')">
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white p-4 text-center">
+      <h2 class="text-3xl font-bold mb-2">Oferta Especial de Primavera</h2>
+      <p class="mb-4">Descontos especiais em estadias e atividades durante os meses de março e abril.</p>
+      <a href="/ofertas" class="bg-white text-gray-800 px-4 py-2 rounded shadow">Ver Ofertas</a>
+    </div>
+  </div>
+
+  <!-- Seções de Conteúdo -->
+  <div class="container mx-auto px-4 py-10 space-y-16">
+
+    <!-- Exemplo: Roteiros -->
+    <section>
+      <h2 class="text-3xl font-bold text-center mb-8">Roteiros</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white shadow rounded overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517022812141-23620dba5c23" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">Rota das Aldeias Ribeirinhas</h3>
+            <p class="mb-2 text-gray-600">Descubra aldeias tradicionais às margens do Tejo.</p>
+            <a href="/roteiros/aldeias-ribeirinhas" class="text-blue-600 font-semibold">Ver Mais</a>
+          </div>
+        </div>
+        <div class="bg-white shadow rounded overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">Trilho da Natureza</h3>
+            <p class="mb-2 text-gray-600">Caminhadas por paisagens naturais preservadas.</p>
+            <a href="/roteiros/trilho-natureza" class="text-blue-600 font-semibold">Ver Mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (Podes duplicar esta estrutura para: Onde Dormir, Onde Comer, O que Fazer, O que Visitar) -->
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-16">
+    <div class="container mx-auto px-4 py-8 text-center">
+      <p>&copy; 2025 Viver o Tejo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS do Carrossel -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 5000);
+  </script>
+
 </body>
 </html>

@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O Projeto - Viver o Tejo</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>O Projeto – Viver o Tejo</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Menu -->
-  <header>
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">Viver o Tejo</a>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projeto.html" class="active">O Projeto</a></li>
-          <li><a href="contactos.html">Contactos</a></li>
-          <li><a href="roteiros.html">Roteiros</a></li>
-          <li><a href="dormir.html">Onde Dormir</a></li>
-          <li><a href="comer.html">Onde Comer</a></li>
-          <li><a href="fazer.html">O que Fazer</a></li>
-          <li><a href="visitar.html">O que Visitar</a></li>
-        </ul>
+<script src="navbar.js"></script>
+<div id="navbar-container"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="min-h-screen pt-24 pb-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-8">O Projeto</h1>
+
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            alt="Projeto Viver o Tejo"
+            class="w-full h-64 object-cover rounded-lg mb-6"
+          />
+
+          <h2 class="text-2xl font-bold mb-4">Missão</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            O projeto "Viver o Tejo" tem como missão promover o desenvolvimento sustentável da região do Tejo,
+            valorizando o património natural, cultural e histórico desta área única de Portugal. Através de
+            iniciativas de turismo responsável, procuramos criar experiências autênticas que beneficiem
+            tanto os visitantes como as comunidades locais.
+          </p>
+
+          <h2 class="text-2xl font-bold mb-4">Objetivos</h2>
+          <ul class="text-gray-600 mb-6 space-y-2">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              Preservar e valorizar o ecossistema único do vale do Tejo
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              Promover o turismo sustentável e responsável na região
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              Apoiar as comunidades locais e a economia regional
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              Sensibilizar para a importância da conservação ambiental
+            </li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mb-4">Parceiros</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Este projeto é desenvolvido em parceria com entidades locais, associações ambientais,
+            municípios da região e operadores turísticos comprometidos com práticas sustentáveis.
+            Juntos, trabalhamos para criar uma rede de experiências que respeita e valoriza o
+            território do Tejo.
+          </p>
+
+          <h2 class="text-2xl font-bold mb-4">Sustentabilidade</h2>
+          <p class="text-gray-600 leading-relaxed">
+            A sustentabilidade está no centro de todas as nossas iniciativas. Promovemos práticas
+            de turismo que minimizam o impacto ambiental, respeitam a cultura local e contribuem
+            para o bem-estar das comunidades. Cada experiência é cuidadosamente desenhada para
+            garantir a preservação do património natural e cultural para as futuras gerações.
+          </p>
+        </div>
       </div>
-    </nav>
-  </header>
-
-  <!-- Conteúdo -->
-  <section class="conteudo-pagina">
-    <div class="container">
-      <h1>O Projeto</h1>
-      <p>
-        O projeto <strong>Viver o Tejo</strong> nasceu com o objetivo de promover e valorizar o território ribeirinho do rio Tejo, destacando os seus roteiros turísticos, a sua riqueza cultural, gastronómica e paisagística.
-      </p>
-      <p>
-        Esta plataforma serve como guia interativo para visitantes e locais, permitindo conhecer os melhores locais para visitar, dormir, comer e viver experiências únicas ao longo do rio Tejo.
-      </p>
     </div>
-  </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-16">
+    <div class="container mx-auto px-4 py-8 text-center">
+      <p>&copy; 2025 Viver o Tejo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
