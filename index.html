@@ -15,11 +15,12 @@
     .carousel-slide {
       position: absolute;
       top: 0;
-      left: 100%;
+      left: 0;
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: all 0.8s ease;
+      z-index: 0;
+     transition: opacity 1s ease-in-out;
     }
 
     .carousel-slide.active {
@@ -28,9 +29,7 @@
       z-index: 10;
     }
 
-    .carousel-slide.prev {
-      left: -100%;
-    }
+    
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -46,7 +45,7 @@
       <div class="text-center bg-black bg-opacity-60 p-6 rounded">
         <h1 class="text-4xl font-bold mb-2">Descubra o Tejo</h1>
         <p class="mb-4">Explore paisagens deslumbrantes e experiências únicas ao longo do maior rio de Portugal</p>
-        <a href="/roteiros" class="bg-white text-gray-800 px-4 py-2 rounded">Explorar Roteiros</a>
+        <a href="roteiros.html" class="bg-white text-gray-800 px-4 py-2 rounded">Explorar Roteiros</a>
       </div>
     </div>
     <div class="carousel-slide bg-cover bg-center text-white flex items-center justify-center"
@@ -54,7 +53,7 @@
       <div class="text-center bg-black bg-opacity-60 p-6 rounded">
         <h1 class="text-4xl font-bold mb-2">Natureza Preservada</h1>
         <p class="mb-4">Conecte-se com a natureza em cenários únicos do vale do Tejo</p>
-        <a href="/o-que-visitar" class="bg-white text-gray-800 px-4 py-2 rounded">O que Visitar</a>
+        <a href="visitar.html" class="bg-white text-gray-800 px-4 py-2 rounded">O que Visitar</a>
       </div>
     </div>
     <div class="carousel-slide bg-cover bg-center text-white flex items-center justify-center"
@@ -62,7 +61,7 @@
       <div class="text-center bg-black bg-opacity-60 p-6 rounded">
         <h1 class="text-4xl font-bold mb-2">Experiências Autênticas</h1>
         <p class="mb-4">Viva momentos inesquecíveis na região mais autêntica de Portugal</p>
-        <a href="/o-que-fazer" class="bg-white text-gray-800 px-4 py-2 rounded">O que Fazer</a>
+        <a href="fazer.html" class="bg-white text-gray-800 px-4 py-2 rounded">O que Fazer</a>
       </div>
     </div>
   </div>
@@ -89,7 +88,7 @@
           <div class="p-4">
             <h3 class="text-xl font-semibold">Rota das Aldeias Ribeirinhas</h3>
             <p class="mb-2 text-gray-600">Descubra aldeias tradicionais às margens do Tejo.</p>
-            <a href="/roteiros/aldeias-ribeirinhas" class="text-blue-600 font-semibold">Ver Mais</a>
+            <a href="rotas/details/1.html" class="text-blue-600 font-semibold">Ver Mais</a>
           </div>
         </div>
         <div class="bg-white shadow rounded overflow-hidden">
